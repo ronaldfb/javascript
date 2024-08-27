@@ -8,11 +8,31 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        input {
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.342);
+            height: 50px;
+            width: 100px;
+            font-size: 20px;
+            
+            
+            
+        }
     </style>
 </head>
 <body>
     <h1><strong>Boas-Vindas</strong></h1>
 
     <input type="button" value="Inicie" onclick="desafio()">
+
+    <script>
+    function desafio() {
+        var nome = window.prompt('Qual é seu nome?')
+        var idade = Number(window.prompt(`Olá, ${nome}! Quantos anos você tem?`))
+        window.alert(`Acabei de conhecer ${nome}, que tem ${idade}anos de idade!`)
+    }
+       
+    </script>
 </body>
 </html>
