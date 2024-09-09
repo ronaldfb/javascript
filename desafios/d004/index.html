@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Troco</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            height: 60px;
+            width: 100px;
+            text-align: center;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o troco</h1>
+
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <script>
+        function calcular() {
+           let produto = window.prompt('Qual produto você está comprando?')
+           let preco = parseFloat(window.prompt(`Quanto custa o ${produto} que você está comprando?`));
+            let valor = parseFloat(window.prompt(`Qual foi o valor que você deu para o ${produto}?`));
+            
+           if(valor > preco) {
+                let troco = valor - preco
+                window.alert(`Você comprou um ${produto} que custou R$${preco.toFixed(2).replace('.',',')}.\nDeu R$${valor.toFixed(2).replace('.',',')} em dinheiro e vai receber ${troco.toFixed(2).replace('.',',')} de troco. Volte sempre! `)
+           }else if(preco > valor) {
+               let quantoFalta = preco - valor
+                window.alert(`Dinheiro insuficiente! \nFaltam R$${quantoFalta.toFixed(2).replace('.',',')} para completar o valor do ${produto}!`)
+
+            }else if(preco === valor){
+                window.alert(`O ${produto} foi pago. \nObrigado pela compra, volte sempre!`)
+            }
+            
+
+           
+            
+
+
+
+
+        }
+    </script>
+</body>
+</html>
