@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            height: 60px;
+            width: 100px;
+            text-align: center;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <input type="button" value="Calcular" onclick="converter()">
+
+    <section id="resultado">
+        <p>Clique no botão acima para inciar.</p>
+    </section>
+
+    <script>
+    function converter() {
+    let res = document.getElementById('resultado');
+    let distancia = parseFloat(window.prompt('Digite uma distância em metros (m)'));
+
+    let medidas = [
+        { unidade: 'quilômetro (Km)', valor: distancia / 1000 },
+        { unidade: 'hectômetro (Hm)', valor: distancia / 100 },
+        { unidade: 'decâmetro (Dam)', valor: distancia / 10 },
+        { unidade: 'decímetro (dm)', valor: distancia * 10 },
+        { unidade: 'centímetro (cm)', valor: distancia * 100 },
+        { unidade: 'milímetro (mm)', valor: distancia * 1000 }
+    ];
+
+
+    let resultadoHTML = '<h2>A distância de ' + distancia + ' metros, corresponde a:</h2><ul>';
+    medidas.forEach(medida => {
+        resultadoHTML += `<p>${medida.valor.toFixed(3).replace('.',',')} ${medida.unidade}</p>`;
+    });
+
+    res.innerHTML = resultadoHTML;
+    }
+            
+    </script>
+</body>
+</html>
