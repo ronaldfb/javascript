@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            height: 60px;
+            width: 100px;
+            text-align: center;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de temperatura</h1>
+
+    <input type="button" value="converter" onclick="converter()">
+
+    <section id="resultado">
+        Clique no botão acima para converter.
+    </section>
+
+<script>
+function converter(){
+
+let res = document.getElementById('resultado')
+let c = parseFloat(window.prompt('Digite uma temperatura em °C (Celsius) '))
+
+let temps = [
+    {unidade: '°K(Kelvin)', temp: c + 273.15  },
+    {unidade: '°F(Fahrenheit)', temp: c * 1.8 + 32}
+]
+
+res.innerHTML = '<h2>A temperatura de ' + c +  '°C corresponde a... </h2>'
+  for (let i = 0; i < temps.length; i++) {
+    res.innerHTML += `<p>${temps[i].temp.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}${temps[i].unidade}</p>`
+  }
+
+
+}
+
+
+</script>
+</body>
+</html>
