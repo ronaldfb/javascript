@@ -18,6 +18,11 @@
             margin-bottom: 10px;
 
         }
+
+        input:hover {
+            background-color: white;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +47,7 @@ let temps = [
 
 res.innerHTML = '<h2>A temperatura de ' + c +  '°C corresponde a... </h2>'
   for (let i = 0; i < temps.length; i++) {
-    res.innerHTML += `<p>${temps[i].temp.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}${temps[i].unidade}</p>`
+    res.innerHTML += `<p>${temps[i].temp.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}<strong>${temps[i].unidade}</strong></p>`
   }
 
 

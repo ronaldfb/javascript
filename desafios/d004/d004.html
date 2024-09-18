@@ -27,8 +27,10 @@
     <script>
         function calcular() {
            let produto = window.prompt('Qual produto você está comprando?')
-           let preco = parseFloat(window.prompt(`Quanto custa o ${produto} que você está comprando?`));
-            let valor = parseFloat(window.prompt(`Qual foi o valor que você deu para o ${produto}?`));
+           let preco = parseFloat(window.prompt(`Quanto custa o ${produto} que você está comprando?`).replace(',', '.'))
+            let valor = parseFloat(window.prompt(`Qual foi o valor que você deu para o ${produto}?`).replace(',', '.'))
+
+
             
            if(valor > preco) {
                 let troco = valor - preco
